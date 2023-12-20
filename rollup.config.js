@@ -5,7 +5,8 @@ import typescript from 'rollup-plugin-typescript2';
 import postcss from 'rollup-plugin-postcss';
 import del from 'rollup-plugin-delete';
 const packageJson = require('./package.json');
-export default {
+
+const config = {
   input: 'src/lib.ts',
   output: [
     {
@@ -31,3 +32,5 @@ export default {
     postcss(),
   ],
 };
+
+export default config;
