@@ -4163,4 +4163,4 @@ function Text() {
 }
 
 export { Button, Text };
-//# sourceMappingURL=index.es.js.map
+//# sourceMappingURL=lib.es.js.map

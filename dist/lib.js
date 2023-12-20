@@ -4166,4 +4166,4 @@ function Text() {
 
 exports.Button = Button;
 exports.Text = Text;
-//# sourceMappingURL=index.js.map
+//# sourceMappingURL=lib.js.map
