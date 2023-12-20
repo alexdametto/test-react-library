@@ -27,7 +27,7 @@ const config = {
     resolve({extensions: ['.js', '.jsx']}),
     babel({
       babelHelpers: 'bundled',
-      presets: ['@babel/preset-react'],
+      presets: [['@babel/preset-react', {"runtime": "automatic"}]],
       extensions: ['.js', '.jsx']
    }),
     commonjs(),
