@@ -1,13 +1,14 @@
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
-import typescript from 'rollup-plugin-typescript2';
 import postcss from 'rollup-plugin-postcss';
 import del from 'rollup-plugin-delete';
+import babel from '@rollup/plugin-babel';
+
 const packageJson = require('./package.json');
 
 const config = {
-  input: 'src/lib.ts',
+  input: 'src/lib.js',
   output: [
     {
       file: packageJson.main,
@@ -23,12 +24,13 @@ const config = {
   plugins: [
     del({ targets: 'dist/*' }),
     peerDepsExternal(),
-    resolve(),
+    resolve({extensions: ['.js', '.jsx']}),
+    babel({
+      babelHelpers: 'bundled',
+      presets: ['@babel/preset-react'],
+      extensions: ['.js', '.jsx']
+   }),
     commonjs(),
-    typescript({
-      tsconfig: 'tsconfig.build.json',
-      useTsconfigDeclarationDir: true,
-    }),
     postcss(),
   ],
 };
