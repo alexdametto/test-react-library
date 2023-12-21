@@ -4,6 +4,9 @@ import commonjs from '@rollup/plugin-commonjs';
 import postcss from 'rollup-plugin-postcss';
 import del from 'rollup-plugin-delete';
 import babel from '@rollup/plugin-babel';
+import tailwindcss from 'tailwindcss';
+
+const tailwindConfig = require('./tailwind.config.js');
 
 const packageJson = require('./package.json');
 
@@ -31,7 +34,17 @@ const config = {
       extensions: ['.js', '.jsx']
    }),
     commonjs(),
-    postcss(),
+    postcss({
+      config: {
+        path: './postcss.config.js',
+      },
+      extensions: ['.css'],
+      minimize: true,
+      inject: {
+        insertAt: 'top',
+      },
+      plugins: [tailwindcss(tailwindConfig)],
+    })
   ],
 };
 
