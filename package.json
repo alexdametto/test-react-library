@@ -1,11 +1,7 @@
 {
   "name": "@alexdametto/test-react-library",
-  "version": "0.9.0",
-  "main": "dist/lib.js",
-  "module": "dist/lib.es.js",
-  "files": [
-    "dist"
-  ],
+  "version": "0.10.0",
+  "main": "src/lib.js",
   "repository": "git://github.com/alexdametto/test-react-library.git",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
