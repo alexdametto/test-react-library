@@ -1,10 +1,9 @@
 {
   "name": "@alexdametto/test-react-library",
-  "version": "0.11.0",
-  "main": "dist/lib.js",
-  "module": "dist/lib.es.js",
+  "version": "0.12.0",
+  "main": "src/lib.js",
   "files": [
-    "dist"
+    "src"
   ],
   "repository": "git://github.com/alexdametto/test-react-library.git",
   "publishConfig": {
@@ -18,11 +17,11 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "tailwindcss": "^3.4.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "rollup -c --bundleConfigAsCjs"
+    "start": "react-scripts start"
   },
   "eslintConfig": {
     "extends": [
@@ -41,15 +40,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "@rollup/plugin-babel": "^6.0.4",
-    "@rollup/plugin-commonjs": "^25.0.7",
-    "@rollup/plugin-node-resolve": "^15.2.3",
-    "rollup": "^4.9.1",
-    "rollup-plugin-delete": "^2.0.0",
-    "rollup-plugin-peer-deps-external": "^2.2.4",
-    "rollup-plugin-postcss": "^4.0.2",
-    "tailwindcss": "^3.4.0"
   }
 }
